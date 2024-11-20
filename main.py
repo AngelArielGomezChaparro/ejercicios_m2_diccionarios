@@ -1,33 +1,6 @@
-from menu.exercisesA import designOneList, designOneDict
+from menu.exercisesA import designOneList, designOneDict #ejercicios
 
 while True:
     designOneDict()
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# main.py
-
-#from menu.exercisesA import display_subjects
-
-#if __name__ == "__main__":
-   # display_subjects()

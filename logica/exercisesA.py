@@ -3,23 +3,23 @@
 #en una lista y la muestre por pantalla.
 
 import json
-def read_file():
-    with open("databases/List/exercisesAList.json", "r") as file:
+def read_file(path):
+    with open(f"datab/{path}", "r") as file:
         data = file.read()
         convertirList = json.loads(data)
         return convertirList
 
-def write_file(data):
-    with open("databases/List/exercisesAList.json", "wb+") as file:
+def write_file(data,path):
+    with open(f"datab/{path}", "r", "wb+") as file:
      convertirJson = json.dumps(data, indent=4).encode("utf-8")
      file.write(convertirJson)
      file.close()
 
 
-def save_course(course):
-    data = read_file()
+def save_course(course,):
+    data = read_file("list/exercisesAList.json")
     data.append(course)
-    write_file(data)
+    write_file(data,"datab/list/exercisesAList.json")
     return data
 
 
@@ -30,7 +30,9 @@ def save_course(course):
 #la divisa no está en el diccionario.
 
 def search_currency(currency):
-    data = read_file("exercisesADict.json")
+    
+    data = read_file("dic/exercisesADic.json")
+
     if (data.get(currency)):
         return data.get(currency)
     else:
@@ -90,30 +92,3 @@ def search_currency(currency):
 
 
 
-# logica/process.py
-
-#import json
-#def read_file():
-    #with open("databases/exercisesAList.json", "r") as file:
-        #data = file.read()
-        #convertirList = json.loads(data)
-        #return convertirList
-
-#def write_file(data):
-    #with open("databases/exercisesAList.json", "wb+") as file:
-     #convertirJson = json.dumps(data, indent=4).encode("utf-8")
-     #file.write(convertirJson)
-     #file.close()
-
-
-#def save_course(course):
-    #data = read_file()
-    #data.append(course)
-    #write_file(data)
-    #return data
-
-
-#from formula.exercisesA import asignature
-
-#def get_asignature():
- #   return asignature
